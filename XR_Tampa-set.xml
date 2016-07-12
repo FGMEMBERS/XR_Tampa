@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+
+	<description>XR Tampa</description>
+	<author>Aucafly (Ausdkunst)</author>	
+	<flight-model>yasim</flight-model>
+	<aero>XR_Tampa-yasim</aero>
+<startup>
+	<splash-texture>Aircraft/XR_Tampa/Splash/splash1.png</splash-texture>
+</startup>
+	<sound>
+   	<path>Aircraft/XR_Tampa/Sounds/aucafly-sound.xml</path>
+  	</sound>
+
+	<model>
+		<path>Aircraft/XR_Tampa/Models/XR_Tampa.xml</path>
+	</model>
+	
+	<view n="0">
+		<internal archive="y">true</internal>
+		<config>
+			<x-offset-m archive="y" type="double">-0.67703</x-offset-m><!--blender y-->
+			<y-offset-m archive="y" type="double">1.75</y-offset-m><!-- blender z-->
+			<z-offset-m archive="y" type="double">0.35</z-offset-m><!-- blender x -->
+			<pitch-offset-deg>-10.0</pitch-offset-deg>
+			<field-of-view>65</field-of-view>
+		</config>
+	</view>
+
+	<view n="1">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="2">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="3">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="4">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="5">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="6">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+
+	<hud>
+		<enable3d>false</enable3d>
+	</hud>
+<multiplay>
+	 <generic>
+	 <float n="0" alias="/sim/model/door-positions/door/position-norm" />
+	<float n="1" alias="/gear/gear[0]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="2" alias="/gear/gear[1]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="3" alias="/gear/gear[2]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="4" alias="/gear/gear[3]/rollspeed-ms"/> <!--wheel rotation-->
+	  <float n="5" alias="/controls/flight/aileron"/> <!--wheel steering-->
+</generic>
+	</multiplay>
+
+</sim>
+
+<engines>
+	<engine n="0">
+		<fuel-flow_pph>0</fuel-flow_pph>
+	</engine>
+	<engine n="1">
+		<fuel-flow_pph>0</fuel-flow_pph>
+	</engine>
+</engines>
+
+<controls>
+	<flight>
+		<aileron alias="/controls/flight/rudder" />
+	</flight>
+   <engines>
+      <engine n="0">
+        <magnetos>3</magnetos>
+      </engine>
+   </engines>
+	<gear>
+		<brake-parking>1</brake-parking>
+		<screen type="bool">false</screen>
+		<roof type="bool">false</roof>
+	</gear>
+ </controls>
+<input>
+	<keyboard>
+        <key n="77"> 
+          <name>M</name>
+          <desc>engage Reverse</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/mixture</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+
+        <key n="109"> 
+          <name>m</name>
+          <desc>disengage Reverse</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/mixture</property>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
+	</keyboard>
+</input>
+<nasal>
+<aucafly>
+<file>Aircraft/XR_Tampa/Nasal/doors.nas</file>
+</aucafly>
+</nasal>
+</PropertyList>
+
+
+
+

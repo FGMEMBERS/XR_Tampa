@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PropertyList>
+   <name>PFD 2d Panel</name>
+    <background>Aircraft/XR_Tampa/Models/transparent.png</background>
+    <w>500</w>
+    <h>400</h>
+   <instruments>
+
+        <instrument include="pfd-text.xml">
+            <name>PFD text</name>
+            <x>250</x>
+            <y>200</y>
+            <w>500</w>
+            <h>400</h>
+        </instrument>
+    </instruments>
+</PropertyList>

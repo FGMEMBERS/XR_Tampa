@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+ <fx>
+
+
+<!-- Current Engine Sound -->
+    <engine>
+      <name>engine #1 running</name>
+      <mode>looped</mode>
+      <path>Aircraft/AUCAFLYCORE/E1.wav</path>
+<condition>
+    <property>/engines/engine/running</property>
+   </condition>
+<volume>
+            <property>engines/engine/thrust-lbs</property>
+            <factor>0.00015</factor>
+            <min>0.0</min>
+            <max>1</max>
+        </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+<engine-internal>
+      <name>engine-internal</name>
+      <mode>looped</mode>
+      <path>Aircraft/AUCAFLYCORE/I1.wav</path>
+<condition>
+    <property>/engines/engine/running</property>
+   </condition>
+
+<volume>
+            <property>engines/engine/thrust-lbs</property>
+            <factor>0.00015</factor>
+            <min>0.0</min>
+            <max>1</max>
+        </volume>
+      <reference-dist>4.0</reference-dist>
+      <max-dist>10.0</max-dist>
+      <position>
+      <x> -2.672 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </position>
+    </engine-internal>
+ <rumble>
+      <name>rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <and>
+          <or>
+            <property>gear/gear[0]/wow</property>
+            <property>gear/gear[1]/wow</property>
+            <property>gear/gear[2]/wow</property>
+	<property>gear/gear[3]/wow</property>
+          </or>
+          <or>
+            <greater-than>
+              <property>gear/gear[0]/rollspeed-ms</property>
+              <value>1</value>
+            </greater-than>
+            <greater-than>
+              <property>gear/gear[1]/rollspeed-ms</property>
+              <value>1</value>
+            </greater-than>
+            <greater-than>
+              <property>gear/gear[2]/rollspeed-ms</property>
+              <value>1</value>
+            </greater-than>
+          </or>
+        </and>
+      </condition>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <type>log</type>
+        <factor>0.5</factor>
+        <max>2.5</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <squeal>
+      <name>squeal</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
+	<property>gear/gear[3]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>0.2</max>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+ <click>
+      <name>frein parc on</name>
+      <path>Aircraft/AUCAFLYCORE/aucafly-tirette.wav</path>
+       <condition>
+          <property>controls/gear/brake-parking</property>
+    </condition>    
+      <volume>
+           <factor>2.0</factor>
+      </volume>
+       <reference-dist>100</reference-dist>
+    <max-dist>1000</max-dist>      
+    </click>
+
+    <click>
+      <name>frein parc off</name>
+      <path>Aircraft/AUCAFLYCORE/aucafly-tirette.wav</path>
+       <condition>
+         <not>
+             <property>controls/gear/brake-parking</property>
+          </not>
+    </condition>    
+      <volume>
+           <factor>2.0</factor>
+      </volume>
+       <reference-dist>100</reference-dist>
+    <max-dist>1000</max-dist>      
+    </click>
+
+
+ </fx>
+</PropertyList>

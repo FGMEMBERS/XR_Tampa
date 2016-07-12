@@ -1,0 +1,116 @@
+<PropertyList>
+
+    <name>PFD text</name>
+    <w-base>400</w-base>
+    <h-base>500</h-base>
+    <w>400</w>
+    <h>500</h>
+
+    <layers>
+
+    <layer>
+        <condition>
+            <greater-than>
+                <property>velocities/airspeed-kt</property>
+                <value>5</value>
+            </greater-than>
+        </condition>
+            <name>Speed</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>12</point-size>
+            <color>
+                <red>0</red>
+                <green>1</green>
+                <blue>0</blue>
+            </color>
+            <chunks>
+		 <chunk>
+                    <type>literal</type>
+                    <text>FG-Speed</text>
+                </chunk>
+                <chunk>
+                    <type>text-value</type>
+                    <property>velocities/airspeed-kt</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-222</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>222</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    <layer>
+            <name>Altitude</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>12</point-size>
+            <color>
+                <red>0</red>
+                <green>1</green>
+                <blue>0</blue>
+            </color>
+            <chunks>
+		<chunk>
+                    <type>literal</type>
+                    <text>FG-Altitude</text>
+                </chunk>
+
+                <chunk>
+                    <type>text-value</type>
+                    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-222</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>200</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Heading</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>12</point-size>
+            <color>
+                <red>0</red>
+                <green>1</green>
+                <blue>0</blue>
+            </color>
+            <chunks>
+	<chunk>
+                    <type>literal</type>
+                    <text>FG-Heading</text>
+                </chunk>
+                <chunk>
+                    <type>text-value</type>
+                    <property>orientation/heading-magnetic-deg</property>
+                </chunk>
+        </chunks>
+           <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-222</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>180</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>
