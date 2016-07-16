@@ -141,24 +141,25 @@
 <z>1</z>
 </axis>
 </animation>
- <panel>
-	<path>Aircraft/XR_Tampa/Models/Message.xml</path>
-	<name>PFD</name>
-        <bottom-left>
-            <x-m>-0.83291</x-m>
-            <y-m>-0.3029</y-m>
-            <z-m>1.24392</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-0.83291</x-m>
-            <y-m>0.01939</y-m>
-            <z-m>1.24392</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-0.90945</x-m>
-            <y-m>-0.3029</y-m>
-            <z-m>1.50908</z-m>
-        </top-left>
-</panel>
+<model>
+  <name>AB_Flame</name>
+  <path>Aircraft/XR_Tampa/Models/afterburner.xml</path>
+  <offsets>
+   <x-m>4.00751</x-m>
+   <y-m>-0.79336</y-m>
+   <z-m>0.80724</z-m>
+<heading-deg>-15</heading-deg>
+  </offsets>
+ </model>
+<model>
+  <name>AB_Flame</name>
+  <path>Aircraft/XR_Tampa/Models/afterburner.xml</path>
+  <offsets>
+   <x-m>4.00751</x-m>
+   <y-m>0.80959</y-m>
+   <z-m>0.80724</z-m>
+<heading-deg>15</heading-deg>
+  </offsets>
+ </model>
 </PropertyList>
  
