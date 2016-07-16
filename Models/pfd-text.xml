@@ -111,6 +111,38 @@
             </transformations>
         </layer>
 
+        <layer>
+            <name>UserID</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>12</point-size>
+            <color>
+                <red>0</red>
+                <green>1</green>
+                <blue>1</blue>
+            </color>
+            <chunks>
+	<chunk>
+                    <type>literal</type>
+                    <text>FG-</text>
+                </chunk>
+                <chunk>
+                    <type>text-value</type>
+                    <property>sim/multiplay/callsign</property>
+                </chunk>
+        </chunks>
+           <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-222</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>140</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
     </layers>
 
 </PropertyList>
