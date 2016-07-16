@@ -78,7 +78,9 @@
 	  <float n="5" alias="/controls/flight/aileron"/> <!--wheel steering-->
 </generic>
 	</multiplay>
-
+   <ai>
+     <scenario n="100">XR_Tampa</scenario>
+   </ai>
 </sim>
 
 <engines>
@@ -132,6 +134,9 @@
 <aucafly>
 <file>Aircraft/XR_Tampa/Nasal/doors.nas</file>
 </aucafly>
+<formation>
+     <file>Aircraft/Generic/formation.nas</file>
+   </formation>
 </nasal>
 </PropertyList>
 
