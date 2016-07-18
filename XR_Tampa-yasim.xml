@@ -100,12 +100,12 @@
           <control-output control="STEER" prop="gear/gear[1]/steering-norm"/>
        </gear>
 
-       <gear x="-2.37" y="1.675" z="-0.3" spring=".3" compression="0.45" dfric="12.5" >
+       <gear x="-2.37" y="1.675" z="-0.3" spring=".3" compression="0.45">
           <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
           <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
        </gear>
 
-       <gear x="-2.37" y="-1.675" z="-0.3" spring=".3" compression="0.45" dfric="12.5">
+       <gear x="-2.37" y="-1.675" z="-0.3" spring=".3" compression="0.45">
           <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
           <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
        </gear>
