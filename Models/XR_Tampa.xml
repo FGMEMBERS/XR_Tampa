@@ -161,5 +161,22 @@
 <heading-deg>15</heading-deg>
   </offsets>
  </model>
+<animation>
+  <object-name>Spoiler</object-name>
+  <type>translate</type>
+  <property>/surface-positions/flap-pos-norm</property>
+<factor>0.1</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>3.6586</x-m>
+   <y-m>0.45553</y-m>
+   <z-m>1.58368</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
 </PropertyList>
  
