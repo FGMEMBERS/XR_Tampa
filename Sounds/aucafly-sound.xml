@@ -145,6 +145,14 @@
     <max-dist>1000</max-dist>      
     </click>
 
-
+<flap>
+<name>flaps</name>
+<mode>in-transit</mode>
+<path>Aircraft/AUCAFLYCORE/Flaps.wav</path>
+<property>/surface-positions/flap-pos-norm</property>
+<volume>
+<factor>0.2</factor>
+</volume>
+</flap>
  </fx>
 </PropertyList>
