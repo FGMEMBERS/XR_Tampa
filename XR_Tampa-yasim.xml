@@ -67,7 +67,8 @@
           <control-speed control="SPOILER" transition-time="0.7"/>
           <control-speed control="FLAP1" transition-time="0.3"/>
        </mstab>
-       <hstab x="-12.2" y="0.25" z="1.7" chord="2.3" length="3.5" taper=".44" sweep="20" dihedral="-1" effectiveness="1">
+<mstab x="-4.8" y="11.15" z="0" chord="1" length="1.53" taper=".45" sweep="22.5" dihedral="78" idrag="-.5"/>
+       <hstab x="-14.95" y="0.15" z="4.7" chord="2.3" length="3.5" taper=".44" sweep="20" dihedral="-1" effectiveness="1">
           <stall aoa="16" width="10" peak="1.5"/>
           <flap0 start="0" end=".93" lift="1.5" drag="1.2"/>
           <control-input axis="/controls/flight/elevator" control="FLAP0"/>

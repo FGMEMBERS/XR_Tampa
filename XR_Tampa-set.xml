@@ -10,6 +10,11 @@
 <startup>
 	<splash-texture>Aircraft/XR_Tampa/Splash/splash1.png</splash-texture>
 </startup>
+<systems>
+		<autopilot>
+			<path>Aircraft/XR_Tampa/XR-autopilot.xml</path>
+		</autopilot>
+	</systems>
 	<sound>
    	<path>Aircraft/XR_Tampa/Sounds/aucafly-sound.xml</path>
   	</sound>
