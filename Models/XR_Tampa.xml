@@ -180,7 +180,7 @@
  </animation>
 <model>
   <name>Pushback</name>
-  <path>Models/Airport/Pushback/Forklift.xml</path>
+  <path>Aircraft/AUCAFLYCORE/Lift.xml</path>
   <offsets>
    <x-m>-3</x-m>
    <y-m>0</y-m>

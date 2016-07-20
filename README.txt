@@ -4,7 +4,7 @@ We would like to thank you for downloading our XR-Tampa.  This is without a doub
 
 XR-Tampa (XR_Tampa) is licensed under GPL.
 
-Please visit our website or Github and download our sound add-on folder (Version 2016.1.2 or newer).
+Please visit our website or Github and download our sound add-on folder (Version 2016.2.0 or newer).
 
 If you believe that our plane has an error, you should inform us by visiting our website.  
 
