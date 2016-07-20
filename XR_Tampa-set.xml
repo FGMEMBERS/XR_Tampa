@@ -82,6 +82,18 @@
    <ai>
      <scenario n="100">XR_Tampa</scenario>
    </ai>
+<systems>
+		<autopilot>
+			<path>Aircraft/XR_Tampa/fly-by-wire.xml</path>
+		</autopilot>
+	</systems>
+<controls>
+		<fbw>
+			<yaw-damper type="int">1</yaw-damper>
+			<rudder type="int">1</rudder>
+			<bank-limit type="int">35</bank-limit> <!-- 35 degrees bank permitted -->
+		</fbw>
+	</controls>
 </sim>
 
 <engines>
@@ -119,6 +131,9 @@
 <formation>
      <file>Aircraft/Generic/formation.nas</file>
    </formation>
+<fbw>
+		<file>Aircraft/XR_Tampa/Nasal/fbw.nas</file>
+	</fbw>
 </nasal>
 </PropertyList>
 
