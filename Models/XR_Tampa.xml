@@ -30,6 +30,24 @@
       <z>  1 </z>
     </axis>
   </animation>
+ <!-- Tail Rotor -->
+<animation>
+    <type>spin</type>
+<object-name>Minor</object-name>
+ <property>rotors/main/rpm</property>
+    <factor> 1 </factor>
+    <center>
+      <x-m> 3.26489 </x-m>
+      <y-m> 1.5706 </y-m>
+      <z-m>  1.44799 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
 <!-- ========== Effects ========= -->
 <effect>
  <inherits-from>Effects/model-transparent</inherits-from>
