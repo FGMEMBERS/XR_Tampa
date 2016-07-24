@@ -1,6 +1,6 @@
 Hi,
 
-We would like to thank you for downloading our XR-Tampa.  This is without a doubt a project for motorists. 
+We would like to thank you for downloading our XR-Tampa (MkII).  This is without a doubt a project for motorists. 
 
 XR-Tampa (XR_Tampa) is licensed under GPL.
 
