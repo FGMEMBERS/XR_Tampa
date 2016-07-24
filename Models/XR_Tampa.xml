@@ -1,7 +1,52 @@
 <PropertyList>
- 
-<path>XR_Tampa.ac</path>
 
+  <path>XR_Tampa.ac</path>
+
+  <nasal>
+    <load>
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+
+    </load>
+
+  </nasal>
+
+  <!-- Main rotor-->
+ <animation>
+    <type>spin</type>
+<object-name>Main</object-name>
+ <property>rotors/main/rpm</property>
+    <factor> 5 </factor>
+    <center>
+      <x-m> -0.0000002 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m>  4.57783 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+  </animation>
+ <!-- Tail Rotor -->
+<animation>
+    <type>spin</type>
+<object-name>Minor</object-name>
+ <property>rotors/main/rpm</property>
+    <factor> 1 </factor>
+    <center>
+      <x-m> 3.26489 </x-m>
+      <y-m> 1.5706 </y-m>
+      <z-m>  1.44799 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
 
 <!-- ========== Effects ========= -->
 <effect>
@@ -9,59 +54,6 @@
  <object-name>Tampa_XR_screen</object-name>
 <object-name>LD3</object-name>
 </effect>
-<animation>
-  <object-name>frontwheel</object-name>
-<object-name>frontwheel2</object-name>
-  <type>rotate</type>
-  <property>controls/flight/aileron</property>
-  <factor>-10</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m> -2.62065 </x-m>
-   <y-m> 0.0   </y-m>
-   <z-m> 0.56882 </z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>0</y>
-   <z>1</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>spin</type>
-  <object-name>frontwheel</object-name>
-<object-name>frontwheel2</object-name>
-  <property>gear/gear[0]/rollspeed-ms</property>
-  <factor>10</factor>
-  <center>
-   <x-m> -2.62065 </x-m>
-   <y-m> 0.0   </y-m>
-   <z-m> 0.56882 </z-m>
-  </center>
-  <axis>
-	<x>0.0</x>
-   <y>-1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-<animation>
-  <type>spin</type>
-  <object-name>backwheel</object-name>
-  <object-name>backwheel2</object-name>
-  <property>gear/gear[2]/rollspeed-ms</property>
-  <factor>10</factor>
-  <center>
-   <x-m> 2.18007 </x-m>
-   <y-m> 0.0   </y-m>
-   <z-m> 0.56882 </z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>-1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
 <animation>
   <object-name>Steering</object-name>
   <type>rotate</type>
@@ -79,16 +71,6 @@
    <z>0</z>
   </axis>
  </animation>
-<animation>
- <type>material</type>
- <object-name>Tampa_XR_Brake</object-name>
- <emission>
-  <red>4.0</red>
-  <green>0.0</green>
-  <blue>0.0</blue>
-  <factor-prop>/controls/gear/brake-parking</factor-prop>
- </emission>
-</animation>
 <animation>
  <type>material</type>
  <object-name>Tampa_XR_screen</object-name>
@@ -164,7 +146,7 @@
 <animation>
   <object-name>Spoiler</object-name>
   <type>translate</type>
-  <property>/surface-positions/flap-pos-norm</property>
+  <property>/engines/engine/running</property>
 <factor>0.1</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -178,14 +160,5 @@
    <z>1</z>
   </axis>
  </animation>
-<model>
-  <name>Pushback</name>
-  <path>Aircraft/AUCAFLYCORE/Lift.xml</path>
-  <offsets>
-   <x-m>-3</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </offsets>
- </model>
 </PropertyList>
  

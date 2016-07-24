@@ -1,29 +1,34 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-<sim>
 
-	<description>XR Tampa</description>
-	<author>Aucafly (Ausdkunst)</author>	
-	<flight-model>yasim</flight-model>
-	<aero>XR_Tampa-yasim</aero>
-<startup>
-	<splash-texture>Aircraft/XR_Tampa/Splash/splash1.png</splash-texture>
-</startup>
-<systems>
-		<autopilot>
-			<path>Aircraft/XR_Tampa/XR-autopilot.xml</path>
-		</autopilot>
-	</systems>
-	<sound>
-   	<path>Aircraft/XR_Tampa/Sounds/aucafly-sound.xml</path>
-  	</sound>
+  <sim>
+    <description>XR_Tampa MkII</description>
+    <author>Aucafly</author>
+<status>development</status>
+    <flight-model archive="y">yasim</flight-model>
+    <aero>XR_Tampa</aero>
 
-	<model>
-		<path>Aircraft/XR_Tampa/Models/XR_Tampa.xml</path>
-	</model>
-	
-	<view n="0">
+    <startup>
+      <splash-texture>Aircraft/XR_Tampa/Splash/splash.png</splash-texture>
+    </startup> 
+
+    <sound>
+      <path>Aircraft/XR_Tampa/Sounds/aucafly-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/XR_Tampa/Models/XR_Tampa.xml</path>
+      <livery>
+        <file type="string"/>
+      </livery>
+      <aucafly>
+        <state type="int">0</state>
+        <engine type="float">0.0</engine>
+        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+      </aucafly>
+    </model>
+<view n="0">
 		<internal archive="y">true</internal>
 		<config>
 			<x-offset-m archive="y" type="double">-0.67703</x-offset-m><!--blender y-->
@@ -71,80 +76,103 @@
 	</view>
 
 	<hud>
-		<enable3d>false</enable3d>
+		<enable3d>true</enable3d>
 	</hud>
+<help>
+      <title>XR_Tampa - background and help</title>
+      <line></line>
+      <key>
+        <name>}</name>
+        <desc>Start engines</desc>
+      </key>
+      <key>
+        <name>{</name>
+        <desc>Shutdown engines</desc>
+      </key>
+         </help>
 <multiplay>
 	 <generic>
 	 <float n="0" alias="/sim/model/door-positions/door/position-norm" />
-	<float n="1" alias="/gear/gear[0]/rollspeed-ms"/> <!--wheel rotation-->
-	  <float n="2" alias="/gear/gear[1]/rollspeed-ms"/> <!--wheel rotation-->
-	  <float n="3" alias="/gear/gear[2]/rollspeed-ms"/> <!--wheel rotation-->
-	  <float n="4" alias="/gear/gear[3]/rollspeed-ms"/> <!--wheel rotation-->
-	  <float n="5" alias="/controls/flight/aileron"/> <!--wheel steering-->
-	<float n="6" alias="/surface-positions/flap-pos-norm"/>
 </generic>
 	</multiplay>
-   <ai>
-     <scenario n="100">XR_Tampa</scenario>
-   </ai>
- <menubar>
-  <default>
-     
-   <menu n="10">
-	<label>XR Series</label>
-			<enabled type="bool">true</enabled>
-    <item n="10">
-     <label>Pushback</label>
-     <name>pushback</name>
-     <binding>
-      <command>dialog-show</command>
-      <dialog-name>pushback</dialog-name>
-     </binding>
-    </item>
-   </menu>
- 
-  </default>
- </menubar>
-</sim>
-
-<engines>
-	<engine n="0">
-		<fuel-flow_pph>0</fuel-flow_pph>
-	</engine>
-	<engine n="1">
-		<fuel-flow_pph>0</fuel-flow_pph>
-	</engine>
-</engines>
-<surface-positions>
-	<speedbrake-pos-norm type="float">0.0</speedbrake-pos-norm>
-</surface-positions>
-
-
+  </sim>
 <controls>
-	<flight>
-		<aileron alias="/controls/flight/rudder" />
-	</flight>
-   <engines>
+    <engines>
       <engine n="0">
-        <magnetos>3</magnetos>
+        <magnetos>0</magnetos>
+        <throttle>1.0</throttle>
+        <clutch type="bool">0</clutch>
+        <clutchguard type="bool">0</clutchguard>
       </engine>
-   </engines>
-	<gear>
-		<brake-parking>1</brake-parking>
-		<screen type="bool">false</screen>
-		<roof type="bool">false</roof>
-	</gear>
- </controls>
-<nasal>
-<aucafly>
-<file>Aircraft/XR_Tampa/Nasal/doors.nas</file>
-</aucafly>
-<formation>
-     <file>Aircraft/Generic/formation.nas</file>
-   </formation>
-</nasal>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <engine-throttle type="double">1.0</engine-throttle>
+      <brake>0</brake>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+    <flight>
+      <aileron-trim>0</aileron-trim>
+      <elevator-trim>0</elevator-trim>
+    </flight>
+  </controls>
+
+  <engines>
+    <engine>
+      <rpm type="double">0</rpm>
+      <running type="bool">false</running>
+      <clutch-engaged type="bool">false</clutch-engaged>
+    </engine>
+  </engines>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <instrumentation>
+    <gsdi>
+      <serviceable type="bool">true</serviceable>
+      <enabled type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <input>
+ <keyboard include="Nasal/aucafly-keyboard.xml"/>
+  </input>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <nasal>
+    <aucafly>
+      <file>Aircraft/XR_Tampa/Nasal/aucafly.nas</file>
+      <file>Aircraft/XR_Tampa/Nasal/rotoranimation.nas</file>
+      <file>Aircraft/XR_Tampa/Nasal/electrical.nas</file>
+      <file>Aircraft/XR_Tampa/Nasal/bladevisible.nas</file>
+      <file>Aircraft/XR_Tampa/Nasal/fcs-management.nas</file>
+	<file>Aircraft/XR_Tampa/Nasal/doors.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>
+    </aucafly>
+  </nasal>
+
+
+
 </PropertyList>
-
-
-
-
